@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/product',[ProductController::class,'index']);
+
+Route::get('/name',function(){
+    return "My name is Runju Raton";
+});
+
+Route::get('/create-product',[ProductController::class,'createProduct']);
+
+Route::get('/student', [StudentController::class,'stdPhone']);
