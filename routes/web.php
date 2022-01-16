@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('welcome');
 });
 
 Route::get('/product',[ProductController::class,'index']);
@@ -28,3 +30,5 @@ Route::get('/name',function(){
 Route::get('/create-product',[ProductController::class,'createProduct']);
 
 Route::get('/student', [StudentController::class,'stdPhone']);
+
+Route::get('/pc',[PostController::class,'postComment']);
