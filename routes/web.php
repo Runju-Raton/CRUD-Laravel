@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -32,3 +33,8 @@ Route::get('/create-product',[ProductController::class,'createProduct']);
 Route::get('/student', [StudentController::class,'stdPhone']);
 
 Route::get('/pc',[PostController::class,'postComment']);
+
+Route::get('/create-teacher',function(){
+    return view('teacher.teacher');
+});
+Route::post('/create',[TeacherController::class,'create']);
